@@ -8,8 +8,10 @@ def load_data(filepath):
 
 
 def get_most_frequent_words(text):
+    NUMBER_OF_WORDS = 10
     return list(map(lambda item: item[0],
-                collections.Counter(text.split()).most_common(10)))
+                collections.Counter(text.split())
+                .most_common(NUMBER_OF_WORDS)))
 
 
 if __name__ == '__main__':
