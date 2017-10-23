@@ -1,6 +1,8 @@
 import collections
 from sys import argv
 
+NUMBER_OF_WORDS = 10
+
 
 def load_data(filepath):
     with open(filepath, 'r') as text_file:
@@ -8,7 +10,6 @@ def load_data(filepath):
 
 
 def get_most_frequent_words(text):
-    NUMBER_OF_WORDS = 10
     return list(map(lambda item: item[0],
                 collections.Counter(text.split())
                 .most_common(NUMBER_OF_WORDS)))
