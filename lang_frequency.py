@@ -8,7 +8,7 @@ def load_data(filepath):
 
 
 def get_most_frequent_words(text, number_of_words=10):
-    return [item[0] for item in collections.Counter(text.split())
+    return [word[0] for word in collections.Counter(text.split())
                                            .most_common(number_of_words)]
 
 
