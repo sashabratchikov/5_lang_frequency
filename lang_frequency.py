@@ -1,7 +1,5 @@
-import collections
 from sys import argv
-
-NUMBER_OF_WORDS = 10
+import collections
 
 
 def load_data(filepath):
@@ -9,12 +7,11 @@ def load_data(filepath):
         return text_file.read()
 
 
-def get_most_frequent_words(text):
-    return list(map(lambda item: item[0],
-                collections.Counter(text.split())
-                .most_common(NUMBER_OF_WORDS)))
+def get_most_frequent_words(text, number_of_words=10):
+    return [item[0] for item in collections.Counter(text.split())
+                                           .most_common(number_of_words)]
 
 
 if __name__ == '__main__':
     text = load_data(argv[1])
-    print(get_most_frequent_words(text))
+    print('Ten most frequent words: ', get_most_frequent_words(text))

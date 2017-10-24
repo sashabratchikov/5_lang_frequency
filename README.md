@@ -13,7 +13,7 @@ python3 lang_frequency.py <path to file>
 Result (10 most frequent words):
 
 ```bash
-['this', 'list', 'contains', 'ten', 'most', 'frequent', 'words', 'in', 'descending', 'order']
+Ten most frequent words: ['this', 'list', 'contains', 'ten', 'most', 'frequent', 'words', 'in', 'descending', 'order']
 ```
 
 # Project Goals
