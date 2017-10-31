@@ -1,4 +1,4 @@
-from sys import argv
+import sys
 import collections
 
 
@@ -16,5 +16,16 @@ def get_most_frequent_words(text, number_of_words=10):
 
 
 if __name__ == '__main__':
-    text = load_data(argv[1])
-    print('Ten most frequent words: ', get_most_frequent_words(text))
+    file_path = None
+    try:
+        file_path = sys.argv[1]
+        text = load_data(file_path)
+    except IndexError:
+        print('Enter path to file: python pprint_json.py <path to file>')
+        sys.exit(1)
+    except FileNotFoundError:
+        print('File you provided: {} not found'.format(file_path))
+        sys.exit(1)
+    print('Ten most frequent words from {} in descending order: '
+          .format(file_path),
+          get_most_frequent_words(text))
