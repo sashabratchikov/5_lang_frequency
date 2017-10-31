@@ -8,9 +8,9 @@ def load_data(filepath):
 
 
 def get_most_frequent_words(text, number_of_words=10):
-    WordFrequency = collections.namedtuple('WordFrequency',
-                                           ['word', 'frequency'])
-    return [WordFrequency(*entity).word for entity in collections
+    word_frequency = collections.namedtuple('WordFrequency',
+                                            ['word', 'frequency'])
+    return [word_frequency(*entity).word for entity in collections
             .Counter(text.split())
             .most_common(number_of_words)]
 
